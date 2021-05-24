@@ -40,7 +40,9 @@ export default {
         }
     },
     created() {
-        this.tasks = JSON.parse(localStorage.getItem(this.db))
+        const res = localStorage.getItem(this.db)
+        const tasks = JSON.parse(res)
+        if(tasks !== null) this.tasks = tasks
     }
 }
 </script>
